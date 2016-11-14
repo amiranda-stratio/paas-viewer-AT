@@ -17,9 +17,9 @@
     </parent>
 
     <groupId>com.stratio.paas</groupId>
-    <artifactId>dcos-frameworks-testsAT</artifactId>
+    <artifactId>paas-viewer-AT</artifactId>
     <version>0.1.0-SNAPSHOT</version>
-    <name>dcos-frameworks-testAT</name>
+    <name>paas-viewer-AT</name>
 
     <build>
         <plugins>
