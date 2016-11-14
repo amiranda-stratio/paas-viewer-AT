@@ -1,0 +1,58 @@
+{
+  "id": "/viewer",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 512,
+  "disk": 0,
+  "instances": 1,
+  "container": {
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "qa.stratio.com/stratio/viewer:0.21.0-RC1",
+      "network": "HOST",
+      "privileged": false,
+      "parameters": [],
+      "forcePullImage": false
+    }
+  },
+  "env": {
+    "VIEWERDB": "postgresql://hakama:hakama@127.0.0.1:5432/hakama",
+    "VIEWER_SHINDIG_HOST": "viewer.paas.stratio.com",
+    "HAPROXY_0_IP": "10.200.1.22"
+  },
+  "healthChecks": [
+    {
+      "protocol": "COMMAND",
+      "command": {
+        "value": "service viewer status"
+      },
+      "gracePeriodSeconds": 300,
+      "intervalSeconds": 60,
+      "timeoutSeconds": 20,
+      "maxConsecutiveFailures": 3,
+      "ignoreHttp1xx": false
+    }
+  ],
+  "labels": {
+    "DCOS_PACKAGE_RELEASE": "1",
+    "HAPROXY_0_STICKY": "true",
+    "DCOS_PACKAGE_SOURCE": "http://sodio.stratio.com/nexus/content/sites/paas/universe/0.2.0-SNAPSHOT/stratio-paas-universe-0.2.0-SNAPSHOT.zip",
+    "HAPROXY_GROUP": "external",
+    "DCOS_PACKAGE_METADATA": "eyJsaWNlbnNlcyI6W3sibmFtZSI6IkFwYWNoZSBMaWNlbnNlIFZlcnNpb24gMi4wIiwidXJsIjoiaHR0cHM6Ly9naXRodWIuY29tL1N0cmF0aW8vVmlld2VyL2Jsb2IvbWFzdGVyL1JFQURNRS5tZCJ9XSwibmFtZSI6InZpZXdlciIsInBvc3RJbnN0YWxsTm90ZXMiOiJJbnN0YWxsYXRpb24gZmluaXNoZWQiLCJzY20iOiJodHRwczovL2dpdGh1Yi5jb20vU3RyYXRpby9WaWV3ZXIuZ2l0IiwiZGVzY3JpcHRpb24iOiJSZWFsIHRpbWUgZGFzaGJvYXJkIiwicGFja2FnaW5nVmVyc2lvbiI6IjIuMCIsInRhZ3MiOlsidmlld2VyIl0sInBvc3RVbmluc3RhbGxOb3RlcyI6IlVuaW5zdGFsbCBmaW5pc2hlZCIsIm1haW50YWluZXIiOiJwYWFzQHN0cmF0aW8uY29tIiwic2VsZWN0ZWQiOnRydWUsImZyYW1ld29yayI6ZmFsc2UsInZlcnNpb24iOiIwLjIxLjAtUkMxIiwicHJlSW5zdGFsbE5vdGVzIjoiSW5zdGFsbGF0aW9uIG9mIFN0cmF0aW8ncyBWaWV3ZXIiLCJpbWFnZXMiOnsiaWNvbi1zbWFsbCI6Imh0dHA6Ly9hc3NldHMuc3RyYXRpby5jb20vbG9nb3MvbG9nb19zdHJhdGlvX3VuaXZlcnNlLnBuZyIsImljb24tbWVkaXVtIjoiaHR0cDovL2Fzc2V0cy5zdHJhdGlvLmNvbS9sb2dvcy9sb2dvX3N0cmF0aW9fdW5pdmVyc2UucG5nIiwiaWNvbi1sYXJnZSI6Imh0dHA6Ly9hc3NldHMuc3RyYXRpby5jb20vbG9nb3MvbG9nb19zdHJhdGlvX3VuaXZlcnNlLnBuZyIsInNjcmVlbnNob3RzIjpudWxsfX0=",
+    "DCOS_PACKAGE_REGISTRY_VERSION": "2.0",
+    "DCOS_SERVICE_NAME": "viewer",
+    "DCOS_PACKAGE_FRAMEWORK_NAME": "viewer",
+    "DCOS_PACKAGE_VERSION": "0.21.0-RC1",
+    "DCOS_PACKAGE_NAME": "viewer",
+    "DCOS_PACKAGE_IS_FRAMEWORK": "false",
+    "HAPROXY_0_VHOST": "viewer.paas.stratio.com"
+  },
+  "portDefinitions": [
+    {
+      "port": 10101,
+      "protocol": "tcp",
+      "labels": {}
+    }
+  ]
+}
