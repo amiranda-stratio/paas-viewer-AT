@@ -20,14 +20,14 @@ import com.stratio.tests.utils.BaseTest;
 import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features = { "src/test/resources/features/automated/installation.feature" })
-public class installation extends BaseTest {
+@CucumberOptions(features = { "src/test/resources/features/automated/functionality.feature" })
+public class IT_functionality extends BaseTest {
 
-    public installation() {
+    public IT_functionality() {
     }
 
-    @Test(enabled = true, groups = {"installation"})
-    public void installation() throws Exception {
+    @Test(enabled = true, groups = {"functionality"})
+    public void configuration() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }

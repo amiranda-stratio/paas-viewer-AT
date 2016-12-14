@@ -20,14 +20,14 @@ import com.stratio.tests.utils.BaseTest;
 import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features = { "src/test/resources/features/automated/stability.feature" })
-public class stability extends BaseTest {
+@CucumberOptions(features = { "src/test/resources/features/automated/multi_instance.feature" })
+public class IT_multi_instance extends BaseTest {
 
-    public stability() {
+    public IT_multi_instance() {
     }
 
-    @Test(enabled = true, groups = {"stability"}, dependsOnGroups = {"installation"})
-    public void stability() throws Exception {
+    @Test(enabled = true, groups = {"multi_instance"})
+    public void multi_instance() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }

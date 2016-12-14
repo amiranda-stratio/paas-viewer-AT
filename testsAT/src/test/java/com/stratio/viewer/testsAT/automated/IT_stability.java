@@ -20,14 +20,14 @@ import com.stratio.tests.utils.BaseTest;
 import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features = { "src/test/resources/features/automated/scalability.feature" })
-public class scalability extends BaseTest {
+@CucumberOptions(features = { "src/test/resources/features/automated/stability.feature" })
+public class IT_stability extends BaseTest {
 
-    public scalability() {
+    public IT_stability() {
     }
 
-    @Test(enabled = true, groups = {"scalability"}, dependsOnGroups = {"installation"})
-    public void scalability() throws Exception {
+    @Test(enabled = true, groups = {"stability"})
+    public void stability() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }

@@ -20,14 +20,14 @@ import com.stratio.tests.utils.BaseTest;
 import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
-@CucumberOptions(features = { "src/test/resources/features/automated/serviceDiscovery.feature" })
-public class serviceDiscovery extends BaseTest {
+@CucumberOptions(features = { "src/test/resources/features/automated/performance.feature" })
+public class IT_performance extends BaseTest {
 
-    public serviceDiscovery() {
+    public IT_performance() {
     }
 
-    @Test(enabled = true, groups = {"serviceDiscovery"}, dependsOnGroups = {"installation"})
-    public void serviceDiscovery() throws Exception {
+    @Test(enabled = true, groups = {"performance"})
+    public void performance() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
 }

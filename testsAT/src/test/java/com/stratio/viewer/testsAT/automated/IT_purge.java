@@ -21,12 +21,12 @@ import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
 @CucumberOptions(features = { "src/test/resources/features/automated/purge.feature" })
-public class purge extends BaseTest {
+public class IT_purge extends BaseTest {
 
-    public purge() {
+    public IT_purge() {
     }
 
-    @Test(enabled = true, groups = {"purge"}, dependsOnGroups = {"installation"})
+    @Test(enabled = true, groups = {"purge"})
     public void purge() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }

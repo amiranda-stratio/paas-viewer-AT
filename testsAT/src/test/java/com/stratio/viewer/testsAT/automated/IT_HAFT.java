@@ -21,12 +21,12 @@ import cucumber.api.CucumberOptions;
 import org.testng.annotations.Test;
 
 @CucumberOptions(features = { "src/test/resources/features/automated/haft.feature" })
-public class HAFT extends BaseTest {
+public class IT_HAFT extends BaseTest {
 
-    public HAFT() {
+    public IT_HAFT() {
     }
 
-    @Test(enabled = true, groups = {"haft"}, dependsOnGroups = {"installation"})
+    @Test(enabled = true, groups = {"haft"})
     public void haftTest() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
