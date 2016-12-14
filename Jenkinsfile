@@ -40,6 +40,6 @@ hose {
 
 
     AT = { config ->
-        doAT(conf: config, groups: ['installation', 'serviceDiscovery', 'configuration', 'functionality', 'haft', 'multi_instance', 'purge', 'haft', '_multi_instance', 'functionality'])                
+        doAT(conf: config, groups: ['installation', 'serviceDiscovery', 'configuration', 'functionality', 'haft', 'purge'])                
     }
 }
