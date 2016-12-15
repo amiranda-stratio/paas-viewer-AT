@@ -5,8 +5,8 @@ Feature: Api basic testing
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user '${DCOS_USER}' and password '${DCOS_PASSWORD}'
 
   Scenario: [Viewer-Functional-Spec-01] Get petition must have a 303 status as response
-    Given I execute command 'echo 10.200.1.22 viewer.paas.stratio.com >> /etc/hosts' in remote ssh connection
-    And I execute command 'echo 10.200.1.22 viewer.paas.stratio.com >> /etc/hosts' locally
+    Given I execute command 'echo ${PUBLIC_AGENT} viewer.paas.stratio.com >> /etc/hosts' in remote ssh connection
+    And I execute command 'echo ${PUBLIC_AGENT} viewer.paas.stratio.com >> /etc/hosts' locally
     And My app is running in 'viewer.paas.stratio.com:80'
     When I send a 'GET' request to '/'
     Then the service response status must be '303'.

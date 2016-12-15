@@ -26,7 +26,11 @@ public class IT_purge extends BaseTest {
     public IT_purge() {
     }
 
-    @Test(enabled = true, groups = {"purge"})
+    @Test(enabled = true, groups = {"purge"}, dependsOnGroups = {"installation",
+                                                                 "serviceDiscovery",
+                                                                 "configuration",
+                                                                 "functionality",
+                                                                 "haft"})
     public void purge() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }

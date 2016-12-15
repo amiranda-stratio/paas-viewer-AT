@@ -26,7 +26,7 @@ public class IT_functionality extends BaseTest {
     public IT_functionality() {
     }
 
-    @Test(enabled = true, groups = {"functionality"})
+    @Test(enabled = true, groups = {"functionality"}, dependsOnGroups = {"installation"})
     public void configuration() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }

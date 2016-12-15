@@ -35,7 +35,8 @@ hose {
                     | -DDCOS_ZK_PORT=2181
 		    | -DPSQL_HOST=paaspostgresbd.labs.stratio.com
 		    | -DPSQL_PORT=5432
-		    | -DPSQL_DB=hakama
+         	    | -DPSQL_DB=hakama
+                    | -DPUBLIC_AGENT=10.200.1.220
                     | """.stripMargin().stripIndent()
 
 

@@ -26,7 +26,7 @@ public class IT_multi_instance extends BaseTest {
     public IT_multi_instance() {
     }
 
-    @Test(enabled = true, groups = {"multi_instance"})
+    @Test(enabled = true, groups = {"multi_instance"}, dependsOnGroups = {"installation"})
     public void multi_instance() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }

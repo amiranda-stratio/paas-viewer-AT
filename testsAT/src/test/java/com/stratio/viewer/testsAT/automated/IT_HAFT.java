@@ -26,7 +26,7 @@ public class IT_HAFT extends BaseTest {
     public IT_HAFT() {
     }
 
-    @Test(enabled = true, groups = {"haft"})
+    @Test(enabled = true, groups = {"haft"}, dependsOnGroups = {"installation"})
     public void haftTest() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }

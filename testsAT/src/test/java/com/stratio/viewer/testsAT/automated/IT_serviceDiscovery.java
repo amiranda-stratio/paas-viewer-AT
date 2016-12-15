@@ -26,7 +26,7 @@ public class IT_serviceDiscovery extends BaseTest {
     public IT_serviceDiscovery() {
     }
 
-    @Test(enabled = true, groups = {"serviceDiscovery"})
+    @Test(enabled = true, groups = {"serviceDiscovery"}, dependsOnGroups = {"installation"})
     public void serviceDiscovery() throws Exception {
         new CucumberRunner(this.getClass()).runCukes();
     }
