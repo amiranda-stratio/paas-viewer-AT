@@ -19,7 +19,7 @@ Feature: Api basic testing
   Scenario: [Viewer-Functional-Spec-03] Get petition to checkConnection must have a 200 status as response and the known message
     Given My app is running in 'viewer.paas.stratio.com:80'
     When I send a 'GET' request to '/api/wizard/checkConfiguration'
-    Then the service response status must be '200' and its response must contain the text '{"status":"OK","configurationStatus":[{"adminUser":"No admin user found"},{"siteOptions":"No site options found"},{"db.default.url":"postgresql://hakama:hakama@'
+    Then the service response status must be '200' and its response must contain the text '{"status":"OK","configurationStatus":[{"adminUser":"No admin user found"},{"db.default.url":"jdbc:postgresql'
 
   Scenario: [Viewer-Functional-Spec-04] Get petition to market must have a 400 as response
     Given My app is running in 'viewer.paas.stratio.com:80'
