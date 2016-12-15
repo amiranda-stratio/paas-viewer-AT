@@ -1,8 +1,7 @@
 @rest
 Feature: Service discovery testing
 
-@include(feature:installation.feature,scenario:InstallUninstall-Spec-01. A service CAN be installed from the CLI)
-  Background: Mesos-DNS must know the service info
+  Background: Mesos-DNS must know te service info
     Given I open remote ssh connection to host '${DCOS_CLI_HOST}' with user '${DCOS_USER}' and password '${DCOS_PASSWORD}'
 
   Scenario: ServiceDiscovery-Spec-01 - Mesos-DNS MUST create the service
