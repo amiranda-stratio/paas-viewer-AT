@@ -1,0 +1,11 @@
+@rest
+Feature: Database configuration testing
+
+  Background: A PostgreSQL database is available and accesible using the connection string "postgresql://hakama:hakama@paaspostgresbd.labs.stratio.com:5432/viewerdb"
+
+  Scenario: Viewer works properly using postgres DB
+    Given a Stratio Postgres BD instance
+    And a PaaS environment whose web interface is accessible
+    When I install a Stratio Viewer instance configured to use the database  "postgresql://hakama:hakama@paaspostgresbd.labs.stratio.com:5432/viewerdb"
+    And the wizard ends
+    Then if I go to Dashboard / Welcome, all widgets of the page are displayed properly
