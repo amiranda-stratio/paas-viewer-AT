@@ -1,0 +1,21 @@
+@rest
+Feature: HA proxy testing
+
+  Background: A PostgreSQL database is available and accesible using the connection string "postgresql://hakama:hakama@paaspostgresbd.labs.stratio.com:5432/viewerdb"
+
+  Scenario: Viewer works properly on HA configuration
+    Given a Stratio Postgres BD instance
+    And a PaaS environment whose web interface is accessible
+    When I install a Stratio Viewer instance configured to use the database  "postgresql://hakama:hakama@paaspostgresbd.labs.stratio.com:5432/viewerdb"  and:
+            | haproxy_mode      |  external                 |
+            | external_hostname | viewerha.paas.stratio.com |
+            | haproxy_address   | {marathon-lb-ip}          |
+    And the wizard ends
+    When I open Viewer web interface using url http://viewerha.paas.stratio.com/
+    And go to Dashboard / Welcome
+    And delete all the widgets of the dashboard
+    When I open Viewer web interface using any of the node endpoints
+    And I go to Dashboard / Welcome
+    Then no widget is displayed
+
+    
